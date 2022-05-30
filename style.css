@@ -2,6 +2,7 @@ body {
     background-color: #1B1A17;
     color: azure;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 6px;
 }
 h1 {
     text-align: center;
