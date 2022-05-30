@@ -1,0 +1,27 @@
+body {
+    background-color: #1B1A17;
+    color: azure;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+    text-align: center;
+    color: whitesmoke;
+}
+h2 {
+    text-align: center;
+    color: whitesmoke;
+}
+h6 {
+    display: inline-block;
+}
+.hplink {
+    display: inline-block;
+    margin: 16px;
+    width: 40%; height:25%;
+    border-radius: 10%;
+    box-shadow: 0 1px 2px 0 rgba(245, 217, 217, 0.3),0 1px 3px 1px rgba(60,64,67,.15);
+}
+.hplink:hover {
+    box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.3),0 8px 10px 6px rgba(60,64,67,.15);
+    filter: brightness(85%)
+}
