@@ -4,25 +4,59 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 6px;
 }
+footer {
+    margin: 16px;
+    margin-top: 5%;
+}
+
+a {
+    color: azure;
+}
+a:hover {
+    color: red;
+    text-decoration-style: dotted;
+}
+
+b {
+    color: red;
+}
+
+.content {
+    margin: 8vw;
+}
+
+.header {
+    text-align: center;
+    color: whitesmoke;
+}
+
 h1 {
-    text-align: center;
-    color: whitesmoke;
+    font-size: 10vw;
 }
-h2 {
-    text-align: center;
-    color: whitesmoke;
-}
+
 h6 {
     display: inline-block;
+    margin: 2px;
 }
+
+.custimg {
+    width: 36vw;
+    margin: 6px;
+    border-radius: 5%;
+    border-color: azure;
+    border-width: 3px;
+    border-style: solid;
+}
+
 .hplink {
     display: inline-block;
     margin: 16px;
-    width: 40%; height:25%;
+    width: 56vmin ; height: 56vmin;
     border-radius: 10%;
-    box-shadow: 0 1px 2px 0 rgba(245, 217, 217, 0.3),0 1px 3px 1px rgba(60,64,67,.15);
+    box-shadow: 0 1px 2px 0 rgba(245, 217, 217, 0.3),0 8px 10px 6px rgba(124, 121, 121, 0.253);
+    transition: 250ms;
 }
 .hplink:hover {
-    box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.3),0 8px 10px 6px rgba(60,64,67,.15);
+    box-shadow: 0 1px 2px 0 rgba(245, 217, 217, 0.3),0 8px 10px 6px rgb(0, 0, 0);
     filter: brightness(85%)
 }
