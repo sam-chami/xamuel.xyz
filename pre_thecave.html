@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>The cave | xamuel.xyz</title>
+		<style>
+			body { 
+                opacity: 0; 
+                background: black; 
+                text-align: center;
+            }
+            .center {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            h1 {
+                font-size: 32pt;
+            }
+		</style>
+	</head>
+	<body>
+        <div class="center">
+            <h1>Sound on</h1>
+            <h1>WASD + mouse </h1>
+            <h2>or</h2>
+            <h1>mouse click + mouse </h1>
+            <h3>You will be redirected in less than 5 seconds</h2>
+        </div>
+        <script>
+            window.transitionToPage = function (href) {
+                document.querySelector('body').style.opacity = 0
+                setTimeout(function () {
+                    window.location.href = href
+                }, 500)
+            }
+            document.addEventListener('DOMContentLoaded', function (event) {
+                    document.querySelector('body').style.opacity = 1
+            })
+        setTimeout(function(){
+            transitionToPage('thecave.html');
+        }, 3000);
+        </script>
+        <footer>
+            <h6>made with blender and three.js. sound by <a href="https://pixabay.com/sound-effects/quarry-tunnel-ambience-1-large-splash-16983/">ecfike</a></h6>
+        </footer>
+	</body>
+</html>

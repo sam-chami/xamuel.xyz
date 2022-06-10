@@ -8,76 +8,21 @@
 		<meta charset="utf-8">
 		<title>The cave | xamuel.xyz</title>
 		<style>
-			body { margin: 0; }
+			body { margin: 0; opacity: 0; background: black; }
 		</style>
 	</head>
 	<body>
-        <div style="text-align: center;">
-            <button onclick="forward()" style="height: 6vh; width: 6vh; font-size: 3vh; padding: 1vh;">▲</button>
-            <button onclick="backward()" style="height: 6vh; width: 6vh; font-size: 3vh; padding: 1vh;">▼</button>
-            </div>
-        </div>
-
-		<script src="https://threejs.org/build/three.min.js"></script>
-		<script>
-			const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-            const renderer = new THREE.WebGLRenderer();
-            renderer.setSize(window.innerWidth , window.innerHeight - vh(8));
-            document.body.appendChild( renderer.domElement );
-
-            const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-            const material = new THREE.MeshBasicMaterial( { color: 0xfff000 } );
-            const cube = new THREE.Mesh( geometry, material );
-            scene.add( cube );
-
-            camera.position.z = 10;
-
-            function animate() {
-                requestAnimationFrame( animate );
-                renderer.render( scene, camera );
-
-                cube.rotation.x += 0.01;
-                cube.rotation.y += 0.01;
-            }
-
-            document.addEventListener("keypress", function onPress(event) {
-                if (event.key === "w") {
-                    forward();
-                }
-                if (event.key === "s") {
-                    backward();
-                }
-            });
-
-            function forward() {
-                camera.position.z -= 0.1;
-            }
-
-            function backward() {
-                camera.position.z += 0.1;
-            }
-
-            window.addEventListener('resize', onWindowResize, false);
-
-            function vh(v) {
-                var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-                return (v * h) / 100;
-            }
-
-            function onWindowResize() {
-
-                aspectRatio = window.innerWidth / window.innerHeight;
-                camera.aspect = aspectRatio;
-                console.log(aspectRatio);
-
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth , window.innerHeight - vh(8));
-
-            }
-
-            animate();
-		</script>
+	<script type="module" src="thecave.js"></script>
+	<script>
+        window.transitionToPage = function (href) {
+            document.querySelector('body').style.opacity = 0
+            setTimeout(function () {
+                window.location.href = href
+            }, 500)
+        }
+        document.addEventListener('DOMContentLoaded', function (event) {
+                document.querySelector('body').style.opacity = 1
+        })
+    </script>
 	</body>
 </html>

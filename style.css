@@ -3,6 +3,7 @@ body {
     color: azure;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 6px;
+    transition: opacity 1.5s;
 }
 footer {
     margin: 16px;
@@ -13,12 +14,12 @@ a {
     color: azure;
 }
 a:hover {
-    color: red;
+    color: #eb4034;
     text-decoration-style: dotted;
 }
 
 button {
-    background-color: red;
+    background-color: #eb4034;
     color: azure;
     border-radius: 8px;
     font-size: 3vw;
@@ -36,7 +37,7 @@ button:hover {
 }
 
 b {
-    color: red;
+    color: #eb4034;
 }
 
 .content {
