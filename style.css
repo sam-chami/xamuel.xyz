@@ -41,16 +41,13 @@ b {
 }
 
 .content {
-    margin: 6vw;
+    margin-right: 18vw;
+    margin-left: 18vw;
 }
 
 .header {
     text-align: center;
     color: whitesmoke;
-}
-
-h1 {
-    font-size: 10vw;
 }
 
 h6 {
