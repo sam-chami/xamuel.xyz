@@ -9,14 +9,17 @@
 </head>
 <body>
     <header>
-        <a href="https://www.xamuel.xyz"><h1 class="header" style="margin-top: 5%; font-size: 8vw;">xamuel.xyz</h1></a>
+        <a href="https://www.xamuel.xyz"><h1 class="header" style="margin-top: 5%;">xamuel.xyz</h1></a>
         <h2 class="header" style="margin-bottom: 6%;">A website for my projects</h2>
     </header>
     <div style="text-align: center;">
-        <a href="lifeprogressbar.html"><img class="hplink" src="lp_logo.png" alt="HTML tutorial"></a>
-        <a href="lome.html"><img class="hplink" src="lome.png" alt="HTML tutorial"></a>
-        <a href="nalasgame.html"><img class="hplink" src="nalagame.png" alt="HTML tutorial"></a>
-        <a href="copypastext.html"><img class="hplink" src="copypastext.png" alt="HTML tutorial"></a>    
+        <a href="lifeprogressbar.html"><img class="hplink" src="src/lp_logo.png" alt="Life Progressbar"></a>
+        <a href="lome.html"><img class="hplink" src="src/lome.png" alt="Lome"></a>
+        <a href="nalasgame.html"><img class="hplink" src="src/nalagame.png" alt="Nala's Game"></a>
+        <a href="copypastext.html"><img class="hplink" src="src/copypastext.png" alt="Copypastext"></a>    
+    </div>
+    <div style="text-align: center;">
+        <span onclick="transitionToPage('pre_thecave.html')"><img class="hplink" style="width: 88vw; height: auto;" src="src/thecave.png" alt="The Cave"></span>
     </div>
     <footer>
         <h6 style="text-align: center; display: block; margin-bottom: 2px;"><a href="https://github.com/sam-chami/xamuel.xyz">Source?</a></h6>
@@ -25,5 +28,16 @@
         <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101369116ns.gif" /></p></noscript>
         <h6 style="float: right;">xamuel.xyz by <a href="https://github.com/sam-chami">sam-chami</a></h6>
     </footer>
+    <script>
+        window.transitionToPage = function (href) {
+            document.querySelector('body').style.opacity = 0
+            setTimeout(function () {
+                window.location.href = href
+            }, 500)
+        }
+        document.addEventListener('DOMContentLoaded', function (event) {
+                document.querySelector('body').style.opacity = 1
+        })
+    </script>
 </body>
 </html>
