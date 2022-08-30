@@ -1,17 +1,20 @@
 body {
     background-color: #1B1A17;
     color: azure;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, arial;
+    margin: 4px;
     transition: opacity 1.5s;
 }
 footer {
     margin: 16px;
-    margin-top: 5%;
+    margin-top: 3%;
+    font-family: "Courier New", Courier, monospace, sans-serif, arial;
 }
 
 a {
     color: azure;
+    text-decoration-color: #eb4034;
+    text-decoration-style: dotted;
 }
 a:hover {
     color: #eb4034;
@@ -47,7 +50,10 @@ b {
 
 .header {
     text-align: center;
-    color: whitesmoke;
+    color: azure;
+    font-family: "Courier New", Courier, monospace, sans-serif, arial;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 h6 {
