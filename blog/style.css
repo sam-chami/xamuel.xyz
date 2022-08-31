@@ -91,3 +91,9 @@ li::before {
   content: "> ";
   color: red;
 }
+
+p::before {
+  content: "> ";
+  color: red;
+}
+

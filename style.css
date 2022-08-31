@@ -82,3 +82,9 @@ h6 {
     box-shadow: 0 1px 2px 0 rgba(245, 217, 217, 0.3),0 8px 10px 6px rgb(0, 0, 0);
     filter: brightness(85%)
 }
+
+p::before { 
+  content: "> ";
+  color: red;
+}
+
