@@ -91,7 +91,7 @@ h6 {
 .custimg {
     width: 34vw;
     margin: 4px;
-    border-radius: 5%;
+    border-radius: 16px;
     border-color: azure;
     border-width: 3px;
     border-style: solid;
