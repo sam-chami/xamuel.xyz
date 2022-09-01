@@ -1,4 +1,5 @@
-body {
+body {    font-family: "Courier New", Courier, monospace, sans-serif, arial;
+
     background-color: #1B1A17;
     color: azure;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, arial;
@@ -37,6 +38,31 @@ button {
 button:hover {
     box-shadow: 0 1px 2px 0 rgba(245, 217, 217, 0.3),0 4px 8px 2px rgb(0, 0, 0);
     filter: brightness(85%)
+}
+
+code {
+  font-family: Consolas, "Courier New", Courier, monospace, sans-serif, arial;
+  color: #eb4034;
+  background-color: #36342e;
+  font-size: 105%;
+  padding: 4px;
+  border-radius: 4px;
+}
+.codeblock {
+  margin: 4px;
+  padding: 4px;
+  background-color: #36342e;
+  border-radius: 4px;
+}
+pre {
+  font-family: Consolas, "Courier New", Courier, monospace, sans-serif, arial;
+  color: #eb4034;
+  background-color: #36342e;
+  font-size: 105%;
+  padding: 4px;
+  border-radius: 4px;
+  word-break: normal;
+  overflow: auto;
 }
 
 b {
@@ -91,11 +117,23 @@ ul {
 
 li::before {
   content: "> ";
-  color: red;
+  color: #eb4034;
 }
 
 p::before {
   content: "> ";
-  color: red;
+  color: #eb4034;
 }
 
+select {
+  border: 2px solid;
+  border-color: azure;
+  border-radius: 4px;
+  background-color: #eb4034;
+}
+
+h2 {
+  text-decoration: underline;
+  text-decoration-color: #eb4034;
+  text-decoration-style: dotted;  
+}

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../../style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to setup the cameras on a Surface Go 3 (GNU/Linux) | blog.xamuel.xyz</title>
+    <title>How to setup the cameras on a Surface Go 3 for video calling (GNU/Linux) | blog.xamuel.xyz</title>
     <meta name="description" content="A guide on how to install and configure the drivers required to make the cameras work in Linux on the Surface Go 3 using surface-linux"> 
     <meta name="keywords" content="microsoft, linux, surface go 3, cameras, surface-linux kernel, ubuntu, arch, pop os">
     <link rel="icon" href="data:image/x-icon;base64,AA">
@@ -13,11 +13,80 @@
 <body>
     <header>
 	<h1><a href="https://xamuel.xyz">xamuel.xyz</a></h1>
-	<h1><a href="https://blog.xamuel.xyz">blog</a></h1>
+	<h1><a href="https://xamuel.xyz/blog">blog</a></h1>
     </header>
     <div class="content">
-        <h1>How to setup the cameras on a Surface Go 3 (GNU/Linux)</h1>
-        <p>WIP</p>
+        <h2>How to setup the cameras on a Surface Go 3 for video calling (GNU/Linux).</h1>
+	<h3>What we are going to do:</h3>
+	<p>We're going to download and compile <a href="https://libcamera.org/">libcamera</a>, a camera support library for Linux.</p>
+	<h3>Installing dependencies:</h3>
+	<p>Open up your terminal and run the following command:</p>
+	<label for="distros">Select you distribution</label>
+        <select name="distros" id="distros" onchange="distC()">
+            <option value="0" id="deft">Select a distro</option>
+	    <option value="1">Debian / Ubuntu</option>
+            <option value="2">Arch / Manjaro</option>
+	</select> 
+	<div class="codeblock">
+		<code id="cd_dep">Select your distribution</code>
+	</div>
+	<h3>Building:</h3>
+	<p>Clone libcamera an cd into it</p>
+	<div class="codeblock">
+                <code>git clone https://git.libcamera.org/libcamera/libcamera.git</code>
+        </div>
+	<div class="codeblock">
+		<code>cd libcamera</code>
+        </div>
+	<p>Build libcamera with only what we need</p>
+	<pre>meson build -Dpipelines=uvcvideo,vimc,ipu3 -Dipas=vimc,ipu3 -Dprefix=/usr -Dgstreamer=enabled
+ninja -C build
+sudo ninja -C build install</pre>
+	<h3>Testing:</h3>
+	<p>Now you can run <code>sudo qcam</code> and make sure that both your cameras are working.</p>
+	<h3>Configuring:</h3>
+        <p>We need to give ourselves permission to use the camera without sudo</p>
+	<div class="codeblock">
+                <code>sudo usermod -aG video $USER && newgrp video</code>
+	</div>
+	<p>Now we'll create a script that will enable us to use our camera in apps that do not use libcamera whenever we run it.</p>
+	<p>But first we need to get our cameras name. You can get it running <code>cam --list</code> it looks something like this \_SB_.PCI0.I2C4.CAMF</p>
+	<p>Example output of <code>cam --list</code>:</p>
+	<pre>Available cameras:
+1: Internal front camera (\_SB_.PCI0.I2C4.CAMF)</pre>
+	<p>Store that name somewhere, as we'll need it later.</p>
+	<p>Now, create a file and open it with your favourite text editor. You can call it <code>start_cam</code>.</p>
+	<p>Add the following line:</p>
+	<div class="codeblock">
+                <code>sudo modprobe v4l2loopback video_nr=42 card_label="virtualcam" exclusive_caps=1</code>
+        </div>
+	<p>Now add this text, but replace CAM_NAME with your camera's name that you got earlier</p>
+	<pre>gst-launch-1.0 libcamerasrc camera-name='\\CAM_NAME' ! \
+    video/x-raw,width=1280,height=720,framerate=30/1,format=NV12 \
+    ! videoconvert ! video/x-raw,format=YUY2 ! queue ! \
+							     v4l2sink device=/dev/video42</pre>
+	<p>Now you need to make the file executable and copy it to /usr/bin (replace start_cam with your file's name)</p>
+	<code>chmod +x start_cam</code>
+	<code>sudo cp start_cam /usr/bin</code>
+	<p>That's it! Now, whenever you want to use your camera, just type <code>start_cam</code> and it will show up!</p>
+	<img class="custimg" style="width: 94%;" src="../media/virtualcam_ss.webp" alt="The camera being reconised by firefox">
+        <img class="custimg" style="width: 94%;" src="../media/cheese_ss.webp" alt="The camera in cheese">        
     </div>
+	<script>
+      function distC() {
+	dist = document.getElementById("distros").value;
+	document.getElementById("deft").disabled = true;
+	switch(dist) {
+	    case "1":
+		document.getElementById("cd_dep").innerHTML = "sudo apt install build-essential meson ninja-build pkg-config libgnutls28-dev openssl python3-pip python3-yaml python3-ply python3-jinja2 qtbase5-dev libqt5core5a libqt5gui5 libqt5widgets5 qttools5-dev-tools libtiff-dev libevent-dev libyaml-dev gstreamer1.0-tools libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev v4l2loopback-dkms";
+		break;
+	    case "2":
+		document.getElementById("cd_dep").innerHTML = "sudo pacman -S boost gcc git gnutls gst-plugins-base lttng-ust meson openssl python-jinja python-ply python-yaml sed gtest doxygen graphviz gstreamer libevent libtiff python-sphinx qt5-base udev qt5-tools v4l2loopback-dkms";
+                break;
+	    default:
+		document.getElementById("cd_dep").innerHTML = "Select your distribution"
+	}
+      }
+    </script>
 </body>
 </html>
