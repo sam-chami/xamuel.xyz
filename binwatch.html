@@ -25,11 +25,30 @@
         <p>It uses 11 LEDs to display the time in binary.</p>
 	<p>It has three columns. The first shows the hours, while the remaining two show the minutes.</p>
 	<p>It keeps time using the NXP PCF8563 and uses an ATmega48PA to control everything.</p>
-	<!--<div style="text-align: center;">
-            <img class="custimg" src="src/lome_full.jpg" alt="The lome PCBs viewed from the back side and front side">
-            <img class="custimg" src="src/lome+phone.jpg" alt="The lome PCBs viewed from the back side and front side"> 
-	    </div>--!>
-        <h2><b>></b> Schematics</h2>
+	<h2><b>></b> 3D model</h2>
+	See internals: <input type="checkbox" id="transCheck" onclick="toggleTrans()">
+	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <model-viewer id="model" src="src/binwatch.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1.96" environment-image="src/whipple_creek_regional_park_04_1k.hdr" exposure="1.84" skybox-image="src/whipple_creek_regional_park_04_1k.hdr" shadow-softness="0.6" auto-rotate>
+            <button class="Hotspot" slot="hotspot-2" data-position="-0.466323435395954m 14.052941910834129m 13.330044746398912m" data-normal="-0.5014605296767822m 0m -0.8651805228831039m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">ATMEGA48P</div>
+            </button><button class="Hotspot" slot="hotspot-3" data-position="-10.829769857208104m 10.952089733780724m 13.677163124084473m" data-normal="0.7071026159715088m 0m -0.7071109463770513m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">PCF8563</div>
+            </button><button class="Hotspot" slot="hotspot-10" data-position="0.26787343004503594m -10.079199605738603m 12.261608123779284m" data-normal="-0.32346597573550223m 0m 0.946239801816368m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">LEDs</div>
+            </button>
+    	</model-viewer>
+	<script>
+	document.getElementById("imageid").src="../template/save.png";
+	function toggleTrans() {
+	  var checkBox = document.getElementById("transCheck");
+	  if (checkBox.checked == false){
+	    document.getElementById("model").src="src/binwatch.gltf";
+	  } else {
+	    document.getElementById("model").src="src/binwatch_semitrans.gltf";
+	  }
+	}
+	</script>
+	<h2><b>></b> Schematics</h2>
         <object data="files/binwatch.pdf" type="application/pdf" width="100%" height="364px">
             <p><a href="files/binwatch.pdf">Download the PDF file for the schematic.</a></p>
         </object>
