@@ -77,7 +77,6 @@ b {
 }
 
 header { 
-   
    margin: 3%;
    font-family: "Courier New", Courier, monospace, sans-serif, arial;
    display: flex; 
@@ -102,7 +101,7 @@ h6 {
 .hplink {
     display: inline-block;
     margin: 16px;
-    width: 56vmin ; height: 56vmin;
+    width: 48vmin ; height: 48vmin;
     border-radius: 10%;
     box-shadow: 0 1px 2px 0 rgba(245, 217, 217, 0.3),0 8px 10px 6px rgba(124, 121, 121, 0.253);
     transition: 250ms;
