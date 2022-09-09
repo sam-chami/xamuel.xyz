@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La página de Samuel</title>
+    <meta name="description" content="xamuel.xyz es mi página web personal, donde puedes encontrar mis proyectos, entre otras cosas">
+    <meta name="keywords" content="tecnología, currículum, portfolio, proyectos, personal, samuel">
+    <link rel="icon" href="data:image/x-icon;base64,AA">
+</head>
+<body>
+   <header>
+        <h1><a href="https://xamuel.xyz/es">xamuel.xyz</a></h1>
+        <h2><a href="https://xamuel.xyz/blog">blog</a></h2>
+   </header>
+   <div class="content">
+	<h2>¿Que es esto?</h2>
+	<p>Esto es una página web en la que encontrarás mis proyectos, y otras cosas (como blogs) <a href="blog">here</a>.</p>
+
+   <div style="text-align: center;">
+	<h2>Proyectos</h2>
+        <a href="lifeprogressbar.html"><img class="hplink" src="../src/lp_logo.webp" alt="Life Progressbar"></a>
+        <a href="lome.html"><img class="hplink" src="../src/lome.webp" alt="Lome"></a>
+        <a href="nalasgame.html"><img class="hplink" src="../src/nalagame.webp" alt="Nala's Game"></a>
+        <a href="binwatch.html"><img class="hplink" src="../src/binwatch.webp" alt="binwatch"></a>    
+    </div>
+   </div>
+    <footer>
+<script async src="//static.getclicky.com/101379267.js"></script>
+<noscript><h6>Clicky</h6></noscript> </h6>
+        <h6><a href="javascript:onclick=transitionToPage('pre_thecave.html')">The Cave</a></h6>
+        <h6 style="float: right;"><a href="https://github.com/sam-chami/xamuel.xyz">xamuel.xyz</a> por <a href="https://github.com/sam-chami">sam-chami</a></h6>
+    </footer>
+    <script>
+        window.transitionToPage = function (href) {
+            document.querySelector('body').style.opacity = 0
+            setTimeout(function () {
+                window.location.href = href
+            }, 500)
+        }
+        document.addEventListener('DOMContentLoaded', function (event) {
+                document.querySelector('body').style.opacity = 1
+        })
+    </script>
+</body>
+</html>
