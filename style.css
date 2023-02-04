@@ -130,6 +130,26 @@ h6 {
   background-color: #121212;
 }
 
+input {
+  background-color: #312c2c;
+  color: white;
+  padding: 4px;
+  margin: 6px;
+  border: none;
+  border-radius: 6px;
+}
+
+input[type=submit] {
+  background-color: #eb4034;
+  transition: 250ms;
+}
+
+input[type=submit]:hover {
+  background-color: #e86c64;
+  color: black;
+  box-shadow: 0 1px 2px 0 rgba(245, 217, 217, 0.3), 0 8px 10px 6px rgb(0, 0, 0);
+}
+
 ul {
   list-style: none;
   padding-left: 5%
