@@ -24,6 +24,7 @@
         <p>It uses 11 LEDs to display the time in binary.</p>
 	<p>It has three columns. The first shows the hours, while the remaining two show the minutes.</p>
 	<p>It keeps time using the NXP PCF8563 and uses an ATmega48PA to control everything.</p>
+    <p>I chose the ATmega48PA over the more common ATmega328 because of the lower cost and power consumption. Nevertheless, the ATmega48 does have less storage and ram than the ATmega328, so I had to make some sacrifices in order to simplify the code.</p>
 	<h2><b>></b> 3D model</h2>
 	See internals: <input type="checkbox" id="transCheck" onclick="toggleTrans()">
 	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
