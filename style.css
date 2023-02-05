@@ -94,6 +94,8 @@ h6 {
 }
 
 .custimg {
+  max-width: 400px;
+  width: 42%;
   margin: 4px;
   border-radius: 16px;
   border-color: azure;
