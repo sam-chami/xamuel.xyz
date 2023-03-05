@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.xamuel.xyz/sitemap.xml
 Sitemap: https://xamuel.xyz/sitemap.xml
