@@ -119,17 +119,26 @@ h6 {
 }
 
 .project {
-  padding: 6%;
-  margin-top: 8vh;
+  padding: 2%;
+  border-radius: 14px;
+  margin: 12px;
+  width: 42vw;
+  height: 48vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: 250ms;
   filter: brightness(66%);
+  background-color: black;
 }
 .project:hover {
   filter: brightness(100%);
   background-color: #121212;
+}
+
+.project img {
+  max-height: 44vmin;
+  max-width: 32vmin;
 }
 
 .aligned-itm{
@@ -275,4 +284,16 @@ model-viewer {
   color: white;
   font-family: sans-serif;
   margin: 2px 0 9px 0;
+}
+
+@media (max-width: 830px) {
+  .project {
+    width: 95%;
+    height: 34vh;
+    padding: 4%;
+    margin: 0px;
+  }
+ .project img {
+    max-width: 45vw;
+  }
 }
