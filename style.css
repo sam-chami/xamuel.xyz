@@ -1,10 +1,17 @@
 body {
-  font-family: "Courier New", Courier, monospace, sans-serif, arial;
   background-color: #080808;
   color: azure;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, arial;
   margin: 4px;
   transition: opacity 1.5s;
+}
+
+h2 {
+  font-family: "Courier New", Courier, monospace, sans-serif, arial;
+}
+
+h3 {
+  font-family: "Courier New", Courier, monospace, sans-serif, arial;
 }
 
 footer {
@@ -17,13 +24,13 @@ footer {
 
 a {
   color: azure;
+  text-decoration: underline;
   text-decoration-color: #eb4034;
   text-decoration-style: dotted;
 }
 
 a:hover {
   color: #eb4034;
-  text-decoration-style: dotted;
 }
 
 button {
@@ -188,12 +195,6 @@ select {
   border-color: azure;
   border-radius: 4px;
   background-color: #eb4034;
-}
-
-h2 {
-  text-decoration: underline;
-  text-decoration-color: #eb4034;
-  text-decoration-style: dotted;
 }
 
 .Hotspot {
