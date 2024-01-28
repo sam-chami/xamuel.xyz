@@ -52,10 +52,16 @@ button:hover {
   filter: brightness(85%)
 }
 
+blockquote {
+  background-color: #1f1f1f;
+  padding: 1em;
+  border-radius: 4px;
+}
+
 code {
   font-family: Consolas, "Courier New", Courier, monospace, sans-serif, arial;
   color: #eb4034;
-  background-color: #36342e;
+  background-color: #1f1f1f;
   font-size: 105%;
   padding: 4px;
   border-radius: 4px;
@@ -64,14 +70,14 @@ code {
 .codeblock {
   margin: 4px;
   padding: 4px;
-  background-color: #36342e;
+  background-color: #1f1f1f;
   border-radius: 4px;
 }
 
 pre {
   font-family: Consolas, "Courier New", Courier, monospace, sans-serif, arial;
   color: #eb4034;
-  background-color: #36342e;
+  background-color: #1f1f1f;
   font-size: 105%;
   padding: 4px;
   border-radius: 4px;
@@ -157,7 +163,7 @@ h6 {
 }
 
 input {
-  background-color: #312c2c;
+  background-color: #1f1f1f;
   color: white;
   padding: 4px;
   margin: 6px;
