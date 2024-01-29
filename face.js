@@ -1,3 +1,5 @@
+// This code is shit, ill clean up later, and upgrade it to garbage
+
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.module.js';
 import { GLTFLoader } from './thecave/GLTFLoader.js';
 
