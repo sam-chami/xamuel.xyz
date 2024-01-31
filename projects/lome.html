@@ -1,42 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nala's Game | xamuel.xyz</title>
+    <title>Lome | xamuel.xyz</title>
+    <meta property="og:image" content="src/lome_wide.webp">
+    <meta name="description" content="A device that can be plugged into your phone and send or receive LoRa packets (messages)">
+    <meta name="keywords" content="technology, arduino, lora, radio, off-grid, comunications, text messaging, phone, walkie-talkie">
+    <link rel="icon" href="data:image/x-icon;base64,AA">
 		<script defer data-domain="xamuel.xyz" src="https://insights.xamuel.xyz/js/script.js"></script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!-- Created with Inkscape (http://www.inkscape.org/) --%3E%3Csvg width='512' height='512' viewBox='0 0 512 512' version='1.1' id='svg5' sodipodi:docname='rounded_corners_nobackground.svg' inkscape:export-filename='New document 1.2023_05_17_18_47_39.0.png' inkscape:export-xdpi='300' inkscape:export-ydpi='300' inkscape:version='1.2.2 (b0a8486541, 2022-12-01)' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Csodipodi:namedview id='namedview7' pagecolor='%23ffffff' bordercolor='%23999999' borderopacity='1' inkscape:showpageshadow='0' inkscape:pageopacity='0' inkscape:pagecheckerboard='true' inkscape:deskcolor='%23d1d1d1' inkscape:document-units='px' showgrid='false' inkscape:zoom='1.4142136' inkscape:cx='270.11478' inkscape:cy='223.79929' inkscape:window-width='1916' inkscape:window-height='1036' inkscape:window-x='0' inkscape:window-y='0' inkscape:window-maximized='1' inkscape:current-layer='layer1'%3E%3Cinkscape:grid type='xygrid' id='grid3371' /%3E%3C/sodipodi:namedview%3E%3Cdefs id='defs2' /%3E%3Cg inkscape:label='Layer 1' inkscape:groupmode='layer' id='layer1'%3E%3Ctext xml:space='preserve' style='font-size:2.8116px;white-space:pre;inline-size:6.58655;display:inline;fill:%23eb4034;fill-opacity:1' x='239.64751' y='236.84422' id='text294' transform='matrix(266.92672,0,0,265.42491,-63902.449,-62408.357)'%3E%3Ctspan x='239.64751' y='236.84422' id='tspan21179'%3E%3Ctspan style='font-family:monospace;-inkscape-font-specification:monospace' id='tspan21177'%3Ex%3C/tspan%3E%3C/tspan%3E%3C/text%3E%3Ccircle id='path3503' style='fill:%23000000;stroke:none' cx='57.878189' cy='426.15714' r='1.5' /%3E%3Cpath style='fill:%23eb4034;fill-opacity:1' d='M 76.270796,56.242452 220.92727,251.21187 71.004049,455.49146 31,455.40541 180.77696,251.15124 35.845554,56.061978 Z' id='path456' /%3E%3C/g%3E%3C/svg%3E%0A">
 </head>
-
 <body>
     <header>
         <h1><a href="https://xamuel.xyz">xamuel.xyz</a></h1>               
     </header>
     <div class="content">
-        <h1>Nala's Game</h1>
-        <p>Nala's Game is a simple retro game for the Game Boy.</p>
-        <p>In the game, you have to catch different humans. The humans will try to run away from you, each at a
-            different speed. If any human succeeds in getting to their home, you'll lose.</p>
-        <p>I developed this game in C with the gbdk-2020 sdk after seeing some of the tutorials by <a
-                href="https://www.youtube.com/c/GamingMonsters" data-type="URL"
-                data-id="https://www.youtube.com/c/GamingMonsters">Gaming Monsters</a>. (Which are great honestly).</p>
+        <h1>Lome</h1>
+	<p>Lome is a device that can be plugged into your phone with USB-C based around the atmega-8a and the Ra-02 LoRa module.</p>
+        <p>It can receive and transmit Lora packages and can be programmed with the Arduino IDE.</p>
+        <p>It could be useful in a situation where there is no service (hiking, disaster), to communicate with your peers or friends</p>
         <div style="text-align: center;">
-            <img class="custimg" src="src/NalasGame.webp" alt="Nala's Game playing on a Gameboy color using an ezFlash jr cartridge.">
+            <img class="custimg" src="../src/lome_full.webp" alt="The lome PCBs viewed from the back side and front side">
+            <img class="custimg" src="../src/lome+phone.webp" alt="The lome PCBs viewed from the back side and front side"> 
         </div>
-        <h2><b>></b> Gameplay</h2>
-        <video controls>
-            <source src="src/gameplay.mp4" type="video/mp4">
-            Your browser does not support video playback.
-        </video>
-
-        <h2><b>></b> Downloads</h2>
-        <div style="text-align: center;">
-            <button onclick="window.location.href='files/nalasgame.gb'">Download .gb file (Gameboy ROM)</button>
-        </div>
+        <h2><b>> </b>Schematics</h2>
+        <object data="files/Lome.pdf" type="application/pdf" width="100%" height="364px">
+            <p><a href="../files/Lome.pdf">Download the PDF file for the schematic.</a></p>
+        </object>
     </div>
 </body>
-
 </html>
