@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binwatch | xamuel.xyz</title>
+    <meta property="og:image" content="src/binwatch.webp">
+    <meta name="description" content="A binary wristwatch, i.e. a watch that displays the time using only leds, and in binary">
+    <meta name="keywords" content="technology, binary, wristwatches, arduino, electronics">
+		<script defer data-domain="xamuel.xyz" src="https://insights.xamuel.xyz/js/script.js"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!-- Created with Inkscape (http://www.inkscape.org/) --%3E%3Csvg width='512' height='512' viewBox='0 0 512 512' version='1.1' id='svg5' sodipodi:docname='rounded_corners_nobackground.svg' inkscape:export-filename='New document 1.2023_05_17_18_47_39.0.png' inkscape:export-xdpi='300' inkscape:export-ydpi='300' inkscape:version='1.2.2 (b0a8486541, 2022-12-01)' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Csodipodi:namedview id='namedview7' pagecolor='%23ffffff' bordercolor='%23999999' borderopacity='1' inkscape:showpageshadow='0' inkscape:pageopacity='0' inkscape:pagecheckerboard='true' inkscape:deskcolor='%23d1d1d1' inkscape:document-units='px' showgrid='false' inkscape:zoom='1.4142136' inkscape:cx='270.11478' inkscape:cy='223.79929' inkscape:window-width='1916' inkscape:window-height='1036' inkscape:window-x='0' inkscape:window-y='0' inkscape:window-maximized='1' inkscape:current-layer='layer1'%3E%3Cinkscape:grid type='xygrid' id='grid3371' /%3E%3C/sodipodi:namedview%3E%3Cdefs id='defs2' /%3E%3Cg inkscape:label='Layer 1' inkscape:groupmode='layer' id='layer1'%3E%3Ctext xml:space='preserve' style='font-size:2.8116px;white-space:pre;inline-size:6.58655;display:inline;fill:%23eb4034;fill-opacity:1' x='239.64751' y='236.84422' id='text294' transform='matrix(266.92672,0,0,265.42491,-63902.449,-62408.357)'%3E%3Ctspan x='239.64751' y='236.84422' id='tspan21179'%3E%3Ctspan style='font-family:monospace;-inkscape-font-specification:monospace' id='tspan21177'%3Ex%3C/tspan%3E%3C/tspan%3E%3C/text%3E%3Ccircle id='path3503' style='fill:%23000000;stroke:none' cx='57.878189' cy='426.15714' r='1.5' /%3E%3Cpath style='fill:%23eb4034;fill-opacity:1' d='M 76.270796,56.242452 220.92727,251.21187 71.004049,455.49146 31,455.40541 180.77696,251.15124 35.845554,56.061978 Z' id='path456' /%3E%3C/g%3E%3C/svg%3E%0A">
+</head>
+<body>
+    <header>
+        <h1><a href="https://xamuel.xyz/en">xamuel.xyz</a></h1>               
+        <h2><a href="https://xamuel.xyz/blog">blog</a></h2>
+    </header>
+    <div class="content">
+        <h1>binwatch</h1>
+        <p>A binary wristwatch.</p>
+        <p>The binwatch differentiates itself from other watches due to its unusual way of reading.</p>
+        <p>It uses 11 LEDs to display the time in binary.</p>
+	<p>It has three columns. The first shows the hours, while the remaining two show the minutes.</p>
+	<p>It keeps time using the NXP PCF8563 and uses an ATmega48PA to control everything.</p>
+    <p>I chose the ATmega48PA over the more common ATmega328 because of the lower cost and power consumption. Nevertheless, the ATmega48 does have less storage and ram than the ATmega328, so I had to make some sacrifices in order to simplify the code.</p>
+	<h2><b>></b> 3D model</h2>
+	See internals: <input type="checkbox" id="transCheck" onclick="toggleTrans()">
+	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <model-viewer id="model" src="../../src/binwatch.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1.96" environment-image="../../src/whipple_creek_regional_park_04_1k.hdr" exposure="1.84" skybox-image="../../src/whipple_creek_regional_park_04_1k.hdr" shadow-softness="0.6" auto-rotate>
+            <button class="Hotspot" slot="hotspot-2" data-position="-0.466323435395954m 14.052941910834129m 13.330044746398912m" data-normal="-0.5014605296767822m 0m -0.8651805228831039m" data-visibility-attribute="visible">
+                <p class="HotspotAnnotation">ATMEGA48P</p>
+            </button><button class="Hotspot" slot="hotspot-3" data-position="-10.829769857208104m 10.952089733780724m 13.677163124084473m" data-normal="0.7071026159715088m 0m -0.7071109463770513m" data-visibility-attribute="visible">
+                <p class="HotspotAnnotation">PCF8563</p>
+            </button><button class="Hotspot" slot="hotspot-10" data-position="0.26787343004503594m -10.079199605738603m 12.261608123779284m" data-normal="-0.32346597573550223m 0m 0.946239801816368m" data-visibility-attribute="visible">
+                <p class="HotspotAnnotation">LEDs</p>
+            </button>
+    	</model-viewer>
+	<script>
+	document.getElementById("imageid").src="../../template/save.png";
+	function toggleTrans() {
+	  var checkBox = document.getElementById("transCheck");
+	  if (checkBox.checked == false){
+	    document.getElementById("model").src="../../src/binwatch.gltf";
+	  } else {
+	    document.getElementById("model").src="../../src/binwatch_semitrans.gltf";
+	  }
+	}
+	</script>
+	<h2><b>></b> Video</h2>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/G51JrJQeC74?cc_load_policy=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h2><b>></b> Schematics and code</h2>
+	<object data="../../files/binwatch.pdf" type="application/pdf" width="400" height="310">
+            <p><a href="../../files/binwatch.pdf">Download the PDF file for the schematic.</a></p>
+        </object>
+	<object style="display: inline-block;" data="files/binwatch_pcb.pdf" type="application/pdf" width="400" height="310">
+            <p><a href="../../files/binwatch_pcb.pdf">Download the PDF file for the schematic.</a></p>
+	</object>
+	<div style="text-align:center;">
+	    <button style="background-color: #222222;" onclick="window.location.href='https://github.com/sam-chami/binwatch'">See on Github</button>
+	    <button style="background-color: #222222;" onclick="window.location.href='https://a360.co/3zrRoKI'">See Case</button>
+	</div>
+    	<button style="width: 100%;" onclick="window.location.href='https://xamuel.xyz/blog/posts/binwatch_guide.html'">How to do it</button>
+    </div>
+</body>
+</html>

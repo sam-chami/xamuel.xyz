@@ -1,7 +1,7 @@
 // This code is shit, ill clean up later, and upgrade it to garbage
 
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.module.js';
-import { GLTFLoader } from './thecave/GLTFLoader.js';
+import { GLTFLoader } from '../thecave/GLTFLoader.js';
 
 const container = document.getElementById('faceContainer');
 var containerWidth =  (window.innerWidth * 40) / 100;
@@ -22,9 +22,12 @@ const light = new THREE.AmbientLight( 0xfff0f0 ); // soft white light scene.add(
 scene.add(light);
 
 const loader = new GLTFLoader();
-var head;
+// Cube is the placeholder for head
+const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+const material = new THREE.MeshBasicMaterial( { color: 0xeb1414 } );
+var head = new THREE.Mesh( geometry, material );
 
-loader.load( 'src/face_decimated.glb', function ( gltf ) {
+loader.load( '../src/face_decimated.glb', function ( gltf ) {
   
   head = gltf.scene
 	scene.add( head );
